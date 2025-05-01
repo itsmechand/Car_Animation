@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    animation: shakebody linear 6s infinite;
+}
+
+.sky {
+    height: 100vh;
+    width: 100%;
+    background-image: url(./imgs/background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    animation: skyMove linear 100s infinite;
+}
+
+.sky::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ffd700 0%, #ff8c00 100%);
+    border-radius: 50%;
+    top: 50px;
+    right: 100px;
+    box-shadow: 0 0 50px #ffd700;
+}
+
+.trees {
+    height: 100vh;
+    width: 100%;
+    background-image: url(./imgs/trees.png);
+    background-size: cover;
+    position: absolute;
+    top: -144px;
+    animation: bgMove linear 80s infinite;
+}
+
+.track {
+    height: 60vh;
+    width: 800vw;
+    background-image: url(./imgs/track.png);
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 13s infinite;
+}
+
+.car {
+    height: 100px;
+    width: 380px;
+    background-image: url(./imgs/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 1vw;
+    bottom: 30vh;
+    animation: shake linear 1s infinite;
+}
+
+.wheel1 img {
+    width: 77px;
+    position: relative;
+    top: 58px;
+    left: 41px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+.wheel2 img {
+    width: 77px;
+    position: relative;
+    top: -23px;
+    left: 262px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+@keyframes wheelRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove {
+    100% {
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes bgMove {
+    100% {
+        background-position: -1200px;
+    }
+}
+
+@keyframes skyMove {
+    100% {
+        background-position: -1200px;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateY(-3px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes shakebody {
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(-5px);
+    }
+}
